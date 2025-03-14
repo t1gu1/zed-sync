@@ -16,6 +16,7 @@
       "space a i": "assistant::ToggleFocus",
       "space f r": ["pane::DeploySearch", { "replace_enabled": true }],
       "space f w": "pane::DeploySearch",
+      "space f p": "projects::OpenRecent",
       "space d": "pane::CloseActiveItem",
       "ctrl-]": "pane::ActivateNextItem",
       "ctrl-[": "pane::ActivatePreviousItem",
