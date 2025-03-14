@@ -1,39 +1,77 @@
-// Zed settings
-// For information on how to configure Zed, see the Zed
-// documentation: https://zed.dev/docs/configuring-zed
-{
-  "features": {
-    "edit_prediction_provider": "zed"
+// Zed keymap
+// For information on binding keys, see the Zed
+// documentation: https://zed.dev/docs/key-bindings
+[
+  {
+    "context": "ProjectPanel || vim_mode == normal",
+    "bindings": {
+      "space e": "project_panel::ToggleFocus",
+      "space t": "workspace::ToggleBottomDock",
+      "space f f": "file_finder::Toggle",
+      "space g g": "git_panel::ToggleFocus",
+      "space g p": "git::Pull",
+      "space g P": "git::Push",
+      "space g s": "git::StageAll",
+      "space g c": "git::Commit",
+      "space a i": "assistant::ToggleFocus",
+      "space f r": ["pane::DeploySearch", { "replace_enabled": true }],
+      "space f w": "pane::DeploySearch",
+      "space d": "pane::CloseActiveItem",
+      "ctrl-]": "pane::ActivateNextItem",
+      "ctrl-[": "pane::ActivatePreviousItem",
+      "cmd-]": "pane::ActivateNextItem",
+      "cmd-[": "pane::ActivatePreviousItem",
+      "ctrl-{": "pane::SwapItemLeft",
+      "ctrl-}": "pane::SwapItemRight",
+      "cmd-{": "pane::SwapItemLeft",
+      "cmd-}": "pane::SwapItemRight",
+      "space D": ["pane::CloseInactiveItems", { "close_pinned": false }],
+      "space [": ["pane::CloseItemsToTheLeft", { "close_pinned": false }],
+      "space ]": ["pane::CloseItemsToTheRight", { "close_pinned": false }]
+    }
   },
-  "vim_mode": true,
-  "ui_font_size": 18,
-  "buffer_font_size": 18,
-  "theme": {
-    "mode": "system",
-    "light": "One Light",
-    "dark": "Rosé Pine Moon"
+  {
+    "context": "ProjectPanel || AssistantPanel || Terminal || OutlinePanel || CollabPanel || GitPanel || Disagnostic || vim_mode == normal",
+    "bindings": {
+      "escape": "workspace::CloseAllDocks"
+    }
   },
-  "file_types": {
-    "Lua": ["script", "render_script", "gui_script", "editor_script"]
+  {
+    "context": "vim_mode == visual || vim_mode == normal",
+    "bindings": {
+      "space /": ["editor::ToggleComments", { "advance_downwards": false }],
+      "space d /": "buffer_search::Dismiss",
+      "shift-up": "editor::MoveLineUp",
+      "shift-down": "editor::MoveLineDown",
+      "shift-k": "editor::MoveLineUp",
+      "shift-j": "editor::MoveLineDown",
+      "ctrl-a": "editor::SelectAll",
+      "cmd-a": "editor::SelectAll"
+    }
   },
-  "project_panel": {
-    // Whether to show the project panel button in the status bar
-    "button": false,
-    // Default width of the project panel.
-    "default_width": 440,
-    // Where to dock the project panel. Can be 'left' or 'right'.
-    "dock": "right",
-    "indent_size": 40
+  {
+    "context": "Terminal",
+    "bindings": {
+      "ctrl-left": "pane::ActivatePreviousItem",
+      "ctrl-right": "pane::ActivateNextItem",
+      "cmd-left": "pane::ActivatePreviousItem",
+      "cmd-right": "pane::ActivateNextItem",
+      "ctrl-h": "pane::ActivatePreviousItem",
+      "ctrl-l": "pane::ActivateNextItem",
+      "cmd-h": "pane::ActivatePreviousItem",
+      "cmd-l": "pane::ActivateNextItem",
+      "ctrl-a": "workspace::NewTerminal",
+      "ctrl-d": "pane::CloseActiveItem",
+      "cmd-a": "workspace::NewTerminal",
+      "cmd-d": "pane::CloseActiveItem",
+      "ctrl-f": "workspace::ToggleZoom",
+      "cmd-f": "workspace::ToggleZoom"
+    }
   },
-  "git_panel": {
-    // Whether to show the git panel button in the status bar.
-    "button": false,
-    // Where to the git panel. Can be 'left' or 'right'.
-    "dock": "right",
-    // Default width of the git panel.
-    "default_width": 560
-  },
-  "terminal": {
-    "default_height": 500
+  {
+    "context": "ProjectSearchBar",
+    "bindings": {
+      "escape": "pane::CloseActiveItem"
+    }
   }
-}
+]
