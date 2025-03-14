@@ -3,7 +3,7 @@
 // documentation: https://zed.dev/docs/key-bindings
 [
   {
-    "context": "ProjectPanel || vim_mode == normal",
+    "context": "ProjectPanel || vim_mode == normal || EmptyPane && !menu && !Dock && !Editor",
     "bindings": {
       "space e": "project_panel::ToggleFocus",
       "space t": "workspace::ToggleBottomDock",
@@ -17,7 +17,6 @@
       "space f r": ["pane::DeploySearch", { "replace_enabled": true }],
       "space f w": "pane::DeploySearch",
       "space f p": "projects::OpenRecent",
-      "space d": "pane::CloseActiveItem",
       "ctrl-s": "workspace::Save",
       "ctrl-]": "pane::ActivateNextItem",
       "ctrl-[": "pane::ActivatePreviousItem",
@@ -27,7 +26,8 @@
       "ctrl-}": "pane::SwapItemRight",
       "cmd-{": "pane::SwapItemLeft",
       "cmd-}": "pane::SwapItemRight",
-      "space D": ["pane::CloseInactiveItems", { "close_pinned": false }],
+      "space c": "pane::CloseActiveItem",
+      "space C": ["pane::CloseInactiveItems", { "close_pinned": false }],
       "space [": ["pane::CloseItemsToTheLeft", { "close_pinned": false }],
       "space ]": ["pane::CloseItemsToTheRight", { "close_pinned": false }]
     }
