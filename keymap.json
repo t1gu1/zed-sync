@@ -18,6 +18,7 @@
       "space f w": "pane::DeploySearch",
       "space f p": "projects::OpenRecent",
       "space d": "pane::CloseActiveItem",
+      "ctrl-s": "workspace::Save",
       "ctrl-]": "pane::ActivateNextItem",
       "ctrl-[": "pane::ActivatePreviousItem",
       "cmd-]": "pane::ActivateNextItem",
