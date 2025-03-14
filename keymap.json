@@ -32,6 +32,12 @@
     }
   },
   {
+    "context": "ProjectPanel",
+    "bindings": {
+      "space e": "workspace::CloseAllDocks"
+    }
+  },
+  {
     "context": "ProjectPanel || AssistantPanel || Terminal || OutlinePanel || CollabPanel || GitPanel || Disagnostic || vim_mode == normal",
     "bindings": {
       "escape": "workspace::CloseAllDocks"
